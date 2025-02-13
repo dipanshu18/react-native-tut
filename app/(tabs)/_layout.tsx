@@ -1,14 +1,14 @@
 import { FontAwesome } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 
 export default function TabLayout() {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: "blue" }}>
+    <Tabs screenOptions={{ tabBarActiveTintColor: "blue", headerShown: false }}>
       <Tabs.Screen
         name="index"
         options={{
           title: "For you",
-          headerShown: false,
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="home" color={color} />
           ),
@@ -18,7 +18,6 @@ export default function TabLayout() {
         name="explore"
         options={{
           title: "Explore",
-          headerShown: false,
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="book" color={color} />
           ),
@@ -28,12 +27,12 @@ export default function TabLayout() {
         name="account"
         options={{
           title: "Account",
-          headerShown: false,
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="user-circle" color={color} />
           ),
         }}
       />
+      <StatusBar style="auto" />
     </Tabs>
   );
 }
