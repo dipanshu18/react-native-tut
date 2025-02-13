@@ -1,9 +1,9 @@
 import { Text, View } from "react-native";
 
-export default function Account() {
+export default function AccountInfo() {
   return (
     <View>
-      <Text>Account</Text>
+      <Text>Account info</Text>
     </View>
   );
 }
