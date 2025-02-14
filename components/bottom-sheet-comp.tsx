@@ -15,7 +15,7 @@ export function BottomSheetComp({
   return (
     <BottomSheet
       ref={bottomSheetRef}
-      snapPoints={["90%"]}
+      snapPoints={["95%"]}
       enablePanDownToClose
       onClose={onClose}
       handleIndicatorStyle={{ display: "none" }}
@@ -31,7 +31,12 @@ export function BottomSheetComp({
 
           <View className="absolute flex-row justify-between w-full p-3">
             <View>
-              <FontAwesome size={24} name="close" color={"white"} />
+              <FontAwesome
+                onPress={() => bottomSheetRef.current?.close()}
+                size={24}
+                name="close"
+                color={"white"}
+              />
             </View>
             <View className="flex-row gap-5">
               <FontAwesome size={24} name="heart" color={"white"} />

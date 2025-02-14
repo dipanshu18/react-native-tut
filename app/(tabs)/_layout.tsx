@@ -8,7 +8,7 @@ export default function TabLayout() {
     <SafeAreaView style={{ flex: 1 }}>
       <Tabs
         screenOptions={{
-          tabBarActiveTintColor: "blue",
+          tabBarActiveTintColor: "red",
           headerShown: false,
           tabBarStyle: {
             elevation: 0,
