@@ -48,7 +48,7 @@ export default function TabLayout() {
               fontWeight: "900",
             },
             tabBarIcon: ({ color }) => (
-              <FontAwesome size={28} name="book" color={color} />
+              <FontAwesome size={28} name="feed" color={color} />
             ),
           }}
         />
