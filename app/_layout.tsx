@@ -17,6 +17,27 @@ export default function RootLayout() {
               headerShown: true,
             }}
           />
+          <Stack.Screen
+            name="privacy-policy"
+            options={{
+              title: "Wallpapers",
+              headerShown: true,
+            }}
+          />
+          <Stack.Screen
+            name="license"
+            options={{
+              title: "Wallpapers",
+              headerShown: true,
+            }}
+          />
+          <Stack.Screen
+            name="contact"
+            options={{
+              title: "Contact",
+              headerShown: true,
+            }}
+          />
         </Stack>
       </GluestackUIProvider>
     </GestureHandlerRootView>
