@@ -13,7 +13,7 @@ export default function LikedPage() {
   const likedImgs = data.filter((item) => item.liked === true);
 
   return (
-    <View className="flex-1">
+    <View className="flex-1 dark:bg-black/85">
       <FlatList
         data={likedImgs}
         renderItem={(element) => (

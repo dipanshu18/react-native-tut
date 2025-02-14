@@ -13,7 +13,7 @@ export default function SuggestedPage() {
   const suggestedImgs = data.filter((item) => item.suggested === true);
 
   return (
-    <View>
+    <View className="flex-1 dark:bg-black/85">
       <FlatList
         data={suggestedImgs}
         renderItem={(element) => (

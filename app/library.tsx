@@ -13,7 +13,7 @@ export default function LibraryPage() {
   const libraryImgs = data.filter((item) => item.library === true);
 
   return (
-    <View className="flex-1">
+    <View className="flex-1 dark:bg-black/85">
       <FlatList
         data={libraryImgs}
         renderItem={(element) => (

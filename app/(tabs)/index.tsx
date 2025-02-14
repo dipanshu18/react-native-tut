@@ -12,15 +12,16 @@ export default function ExplorePage() {
   } | null>(null);
 
   return (
-    <View className="flex-1">
+    <View className="flex-1 dark:bg-black">
       <View className="flex-1">
         <ParallaxScrollView>
           <FlatList
             data={data}
+            scrollEnabled={false}
             renderItem={(element) => (
               <Pressable
                 onPress={() => setSelectedWallpaper(element.item)}
-                className="p-5"
+                className="p-5 dark:bg-black/85"
               >
                 <ImageCard uri={element.item.uri} name={element.item.name} />
               </Pressable>

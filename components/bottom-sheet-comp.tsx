@@ -1,5 +1,6 @@
 import { FontAwesome } from "@expo/vector-icons";
 import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
+import { useColorScheme } from "nativewind";
 import { useRef } from "react";
 import { Image, Pressable, Text, View } from "react-native";
 
@@ -11,6 +12,7 @@ export function BottomSheetComp({
   onClose: () => void;
 }) {
   const bottomSheetRef = useRef<BottomSheet>(null);
+  const { colorScheme } = useColorScheme();
 
   return (
     <BottomSheet
@@ -21,11 +23,11 @@ export function BottomSheetComp({
       handleIndicatorStyle={{ display: "none" }}
       handleStyle={{ display: "none" }}
     >
-      <BottomSheetView className="flex-1 items-center">
+      <BottomSheetView className="flex-1 rounded-t-xl items-center dark:bg-neutral-950/90">
         <View className="h-[500] w-full">
           <Image
             source={{ uri: wallpaper.uri }}
-            className="w-full h-full rounded-t-xl"
+            className="w-full h-full rounded-xl"
             resizeMode="cover"
           />
 
@@ -46,13 +48,21 @@ export function BottomSheetComp({
         </View>
 
         <View>
-          <Text className="my-2 text-3xl font-extrabold">{wallpaper.name}</Text>
+          <Text className="dark:text-white my-2 text-3xl font-extrabold">
+            {wallpaper.name}
+          </Text>
         </View>
 
         <View className="w-full px-10">
-          <Pressable className="bg-black flex-row items-center justify-center gap-2 p-5 rounded-xl text-white w-full">
-            <FontAwesome size={24} name="download" color="white" />
-            <Text className="text-white font-bold text-xl">Download</Text>
+          <Pressable className="dark:bg-white bg-black flex-row items-center justify-center gap-2 p-5 rounded-xl w-full">
+            <FontAwesome
+              size={24}
+              name="download"
+              color={colorScheme === "light" ? "white" : "black"}
+            />
+            <Text className="text-white dark:text-black font-bold text-xl">
+              Download
+            </Text>
           </Pressable>
         </View>
       </BottomSheetView>

@@ -1,64 +1,93 @@
 import { FontAwesome } from "@expo/vector-icons";
 import { Link } from "expo-router";
-import { Pressable, Text, View } from "react-native";
+import { useColorScheme } from "nativewind";
+import { Pressable, Switch, Text, View } from "react-native";
 
 export default function Account() {
+  const { colorScheme, toggleColorScheme } = useColorScheme();
+
   return (
-    <View className="flex-1" style={{ paddingHorizontal: 20 }}>
-      <Text className="font-extrabold mb-5" style={{ fontSize: 30 }}>
+    <View className="flex-1 dark:bg-black/85" style={{ paddingHorizontal: 20 }}>
+      <Text
+        className="dark:text-white font-extrabold my-5"
+        style={{ fontSize: 30 }}
+      >
         Wallpapers
       </Text>
 
       <View className="mb-5">
-        <Pressable className="flex-row rounded-xl justify-center items-center gap-2 bg-black p-5">
-          <FontAwesome size={24} name="google" color={"white"} />
-          <Text className="text-white font-bold">Sign in with Google</Text>
+        <Pressable className="flex-row rounded-xl justify-center items-center gap-2 bg-black dark:bg-white p-5">
+          <FontAwesome
+            size={24}
+            name="google"
+            color={colorScheme === "light" ? "white" : "black"}
+          />
+          <Text className="text-white dark:text-black font-bold">
+            Sign in with Google
+          </Text>
         </Pressable>
       </View>
 
-      <View style={{ marginVertical: 20 }}>
-        <Text className="font-bold mb-5" style={{ fontSize: 25 }}>
-          Theme
+      <View
+        style={{ marginVertical: 20 }}
+        className="flex-row items-center gap-5"
+      >
+        <Text className="dark:text-white font-bold" style={{ fontSize: 25 }}>
+          Dark mode
         </Text>
 
-        <View className="flex-row w-full gap-5">
-          <Pressable className="flex-row items-center justify-center p-5  rounded-xl px-10 gap-2  bg-black dark:bg-white">
-            <FontAwesome size={24} name="moon-o" color={"white"} />
-            <Text className="text-white dark:text-black font-bold text-xl">
-              Dark
-            </Text>
-          </Pressable>
-          <Pressable className="flex-row items-center justify-center px-10 gap-2 p-5 bg-white dark:bg-black rounded-xl">
-            <FontAwesome size={24} name="sun-o" color={"black"} />
-
-            <Text className="text-black dark:text-white font-bold text-xl">
-              Light
-            </Text>
-          </Pressable>
-        </View>
+        <Switch
+          trackColor={{
+            false: "gray",
+            true: "white",
+          }}
+          thumbColor={colorScheme === "dark" ? "gray" : "black"}
+          style={{}}
+          value={colorScheme === "dark"}
+          onChange={toggleColorScheme}
+        />
       </View>
 
       <View style={{ marginVertical: 20 }}>
-        <Text className="font-bold mb-5" style={{ fontSize: 25 }}>
+        <Text
+          className="dark:text-white font-bold mb-5"
+          style={{ fontSize: 25 }}
+        >
           Account
         </Text>
 
         <View className="gap-5">
           <Link href={"/account-info"}>
-            <Text style={{ fontWeight: "400", fontSize: 20 }}>
+            <Text
+              style={{ fontWeight: "400", fontSize: 20 }}
+              className="dark:text-white"
+            >
               More Account Info
             </Text>
           </Link>
           <Link href={"/privacy-policy"}>
-            <Text style={{ fontWeight: "400", fontSize: 20 }}>
+            <Text
+              style={{ fontWeight: "400", fontSize: 20 }}
+              className="dark:text-white"
+            >
               Privacy Policy
             </Text>
           </Link>
           <Link href={"/license"}>
-            <Text style={{ fontWeight: "400", fontSize: 20 }}>License</Text>
+            <Text
+              style={{ fontWeight: "400", fontSize: 20 }}
+              className="dark:text-white"
+            >
+              License
+            </Text>
           </Link>
           <Link href={"/contact"}>
-            <Text style={{ fontWeight: "400", fontSize: 20 }}>Contact</Text>
+            <Text
+              style={{ fontWeight: "400", fontSize: 20 }}
+              className="dark:text-white"
+            >
+              Contact
+            </Text>
           </Link>
         </View>
       </View>
