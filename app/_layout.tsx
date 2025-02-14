@@ -7,7 +7,8 @@ import "./globals.css";
 
 export default function RootLayout() {
   return (
-    <GluestackUIProvider mode="light"><GestureHandlerRootView>
+    <GestureHandlerRootView>
+      <GluestackUIProvider mode="light">
         <Stack screenOptions={{ headerShown: false }}>
           <Stack.Screen
             name="account-info"
@@ -17,6 +18,7 @@ export default function RootLayout() {
             }}
           />
         </Stack>
-      </GestureHandlerRootView></GluestackUIProvider>
+      </GluestackUIProvider>
+    </GestureHandlerRootView>
   );
 }

@@ -4,14 +4,7 @@ import { View } from "react-native";
 import { useSharedValue } from "react-native-reanimated";
 import Carousel from "react-native-reanimated-carousel";
 
-const defaultDataWith6Colors = [
-  "#B0604D",
-  "#899F9C",
-  "#B3C680",
-  "#5C6265",
-  "#F5D399",
-  "#F1F1F1",
-];
+const defaultDataWith6Colors = ["#B0604D", "#899F9C", "#B3C680", "#5C6265"];
 
 export function ImageCarousel(props) {
   const progress = useSharedValue<number>(0);

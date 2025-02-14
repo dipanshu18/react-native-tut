@@ -1,4 +1,4 @@
-import { Dimensions, ScrollView, StyleSheet, View } from "react-native";
+import { Dimensions, StyleSheet, View } from "react-native";
 import Animated, {
 	interpolate,
 	useAnimatedRef,
@@ -6,7 +6,6 @@ import Animated, {
 	useScrollViewOffset
 } from 'react-native-reanimated';
 import { ImageCarousel } from "./image-carousel";
-import { Stack } from "expo-router";
 
 interface IParallaxProps {
   children: React.ReactNode
@@ -37,12 +36,9 @@ export function ParallaxScrollView({children}: IParallaxProps) {
 	});
 
   return <View className="flex-1">
-    <Stack screenOptions={{headerTransparent: true}} />
-  <Animated.ScrollView ref={scrollRef} scrollEventThrottle={16}>
+  <Animated.ScrollView ref={scrollRef} scrollEventThrottle={16} className="flex-1">
     <ImageCarousel style={[styles.image, imageAnimatedStyle]} />
-    
-
-    <View className="h-[2000] bg-white">
+    <View className="flex-1 bg-neutral-200">
     {children}
     </View>
   </Animated.ScrollView>
