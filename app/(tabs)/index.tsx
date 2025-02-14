@@ -49,7 +49,7 @@ export default function ExplorePage() {
                 onPress={() => setSelectedWallpaper(element.item)}
                 className="p-5"
               >
-                <ImageCard uri={element.item.uri} />
+                <ImageCard uri={element.item.uri} name={element.item.name} />
               </Pressable>
             )}
             keyExtractor={(item) => item.name}
